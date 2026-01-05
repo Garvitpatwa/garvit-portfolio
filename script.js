@@ -1,110 +1,132 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    const navbar = document.querySelector('.navbar');
-    
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
+
+    // ================= THEME TOGGLE =================
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
         body.classList.add('light-theme');
-        if (navbar) navbar.classList.add('light-theme');
-        if (themeToggle) themeToggle.checked = true;
+        themeToggle.checked = true;
     }
-    
-    if (themeToggle) {
-        themeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                body.classList.add('light-theme');
-                if (navbar) navbar.classList.add('light-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.classList.remove('light-theme');
-                if (navbar) navbar.classList.remove('light-theme');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-    }
-    
+
+    themeToggle?.addEventListener('change', () => {
+        body.classList.toggle('light-theme');
+        localStorage.setItem(
+            'theme',
+            body.classList.contains('light-theme') ? 'light' : 'dark'
+        );
+    });
+
+    // ================= SMOOTH SCROLL =================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', e => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(anchor.getAttribute('href'));
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 80, 
+                    top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
         });
     });
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const sectionObserver = new IntersectionObserver(function(entries, observer) {
+
+    // ================= SECTION ANIMATION =================
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-fade-in-up');
-                observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
-    
-    document.querySelectorAll('.section').forEach(section => {
-        sectionObserver.observe(section);
-    });
-    
-    const skillBars = document.querySelectorAll('.skill-bar');
-    const skillObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetBar = entry.target;
-                const width = targetBar.getAttribute('data-width');
-                
-                setTimeout(() => {
-                    targetBar.style.width = width;
-                }, 200);
-                
-                observer.unobserve(targetBar);
-            }
-        });
-    }, { threshold: 0.8 });
+    }, { threshold: 0.1 });
 
-    skillBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.setAttribute('data-width', width);
-        bar.style.width = '0';
-        skillObserver.observe(bar);
+    document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
     });
-    
+
+    // ================= NAV ACTIVE LINK =================
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     window.addEventListener('scroll', () => {
-        let currentSectionId = '';
+        let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 90) {
-                currentSectionId = section.getAttribute('id');
+            if (window.scrollY >= section.offsetTop - 90) {
+                current = section.id;
             }
         });
-        
+
         navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === currentSectionId) {
-                link.classList.add('active');
-            }
+            link.classList.toggle(
+                'active',
+                link.getAttribute('href').slice(1) === current
+            );
         });
     });
+const contactForm = document.getElementById('contact-form');
 
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! This is a demo form.');
-            contactForm.reset();
-        });
-    }
+contactForm?.addEventListener('submit', () => {
+    setTimeout(() => {
+        alert('Message sent successfully!');
+    }, 500);
 });
+
+});
+
+
+const canvas = document.getElementById("stars-bg");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+// ⭐ STAR SETTINGS
+const STAR_COUNT = 20000;
+const STAR_SIZE = window.innerWidth < 768 ? 1.8 : 4; // 🔥 DEFINE ONCE
+const stars = [];
+
+for (let i = 0; i < STAR_COUNT; i++) {
+    stars.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        z: Math.random() * w,
+        speed: Math.random() * 3 + 1
+    });
+}
+
+function animateStars() {
+    ctx.clearRect(0, 0, w, h);
+
+    ctx.fillStyle = "rgba(180, 230, 255, 1)";
+    for (let star of stars) {
+        star.z -= star.speed;
+
+        if (star.z <= 0) {
+            star.z = w;
+            star.x = Math.random() * w;
+            star.y = Math.random() * h;
+        }
+
+        const sx = (star.x - w / 2) * (w / star.z) + w / 2;
+        const sy = (star.y - h / 2) * (w / star.z) + h / 2;
+
+        // 🌌 DEPTH-BASED STAR SIZE (PRO LOOK)
+        const depth = 1 - star.z / w;
+        const r = depth * depth * STAR_SIZE;
+
+        ctx.beginPath();
+        ctx.arc(sx, sy, r, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    requestAnimationFrame(animateStars);
+}
+
+animateStars();
+

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ujjwal Shukla - Portfolio</title>
+    <title>Garvit Patwa - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 </head>
 <body>
     <div class="theme-toggle">
@@ -19,14 +21,14 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">US</div>
+            <a href="#home" class="logo">GP</a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#achievements" class="nav-link">Achievements</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#leadership" class="nav-link">Leadership</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#interests" class="nav-link">Interests</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -34,15 +36,35 @@
     </nav>
 
     <section id="home" class="hero">
+        <canvas id="stars-bg"></canvas>
+        <div class="galaxy-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Ujjwal Shukla</h1>
+            <h1 class="hero-title">Garvit Patwa</h1>
             <div class="hero-subtitle">
-                <span class="typing-text">B.Tech (CSE), 2nd Year | Lloyd Institute of Engineering & Technology</span>
+                <span class="typing-text">B.Tech (CSE), 3rd Year | Jaypee University Of Engineering And Technology, Guna</span>
             </div>
             <div class="hero-buttons">
-                <a href="Ujjwal_Shukla_Resume (1).pdf" class="btn btn-primary">Download Resume</a>
+                <a href="garvit_resume.pdf" target="_blank" class="btn btn-primary">Download Resume</a>
                 <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
+            <div class="hero-socials">
+                <a href="https://github.com/Garvitpatwa" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/garvit-patwa-391375327/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/Garvitpatwa" target="_blank" aria-label="X">
+                    <i class="devicon-twitter-original"></i>
+                </a>
+                <a href="https://www.instagram.com/garvitpatwa/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:garvitpatwaa@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
         </div>
         <div class="scroll-indicator">
             <div class="scroll-down"></div>
@@ -52,83 +74,112 @@
     <section id="about" class="about section">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>I am a passionate Computer Science Engineering student with a keen interest in web development, artificial intelligence, and blockchain technology. I love exploring new technologies and applying them to solve real-world problems. As a continuous learner, I actively participate in hackathons and tech events to enhance my skills and network with like-minded individuals.</p>
+            <p>I am a Computer Science Engineering student who enjoys turning complex problems into smart, 
+                scalable solutions. My work revolves around full-stack web development, IoT-based automation,
+                and data-driven systems. I have hands-on experience building real-time dashboards, integrating
+                hardware with cloud platforms, and designing clean, functional user interfaces. I constantly
+                explore emerging technologies and apply them through practical projects, hackathons, and technical
+                experiments to build systems that are efficient, reliable, and impactful.</p>
             <div class="education">
                 <h3>Education</h3>
                 <div class="edu-item">
                     <h4>B.Tech in Computer Science Engineering</h4>
-                    <p>Lloyd Institute of Engineering & Technology</p>
-                    <p>2024 - 2028</p>
+                    <p>Jaypee University Of Engineering And Technology, Guna</p>
+                    <p>2023 - 2027</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills section">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fab fa-python"></i>
-                <h3>Python</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 85%"></div></div>
+    <section id="skills" class="tech-stack section">
+        <h2 class="section-title">&lt; Tech Stack /&gt;</h2>
+    
+        <div class="stack-container">
+    
+            <!-- Frontend -->
+            <div class="stack-group">
+                <h3>Front-End ()</h3>
+                <div class="stack-grid">
+                    <div class="stack-card"><i class="fab fa-html5"></i><span>HTML</span></div>
+                    <div class="stack-card"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="stack-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                    <div class="stack-card"><i class="devicon-react-original"></i><span>React.js</span></div>
+                    <div class="stack-card"><i class="devicon-tailwindcss-original"></i><span>Tailwindcss</span></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>C</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 75%"></div></div>
+    
+            <!-- Backend -->
+            <div class="stack-group">
+                <h3>Back-End ()</h3>
+                <div class="stack-grid">
+                    <div class="stack-card"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                    <div class="stack-card"><i class="fas fa-exchange-alt"></i><span>Rest</span></div>
+                    <div class="stack-card"><i class="devicon-flask-original"></i><span>Flask</span></div>
+                    <div class="stack-card"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="stack-card"><i class="devicon-mysql-original"></i><span>MySQL</span></div>
+                    <div class="stack-card"><i class="fas fa-database"></i><span>DBMS</span></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fab fa-html5"></i>
-                <h3>HTML</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 90%"></div></div>
+    
+            <!-- Programming -->
+            <div class="stack-group">
+                <h3>Programming ()</h3>
+                <div class="stack-grid">
+                    <div class="stack-card"><i class="fas fa-code"></i><span>C</span></div>
+                    <div class="stack-card"><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
+                    <div class="stack-card"><i class="fas fa-sitemap"></i><span>DSA</span></div>
+                    <div class="stack-card"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="stack-card"><i class="devicon-azuresqldatabase-plain"></i><span>SQL</span></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fab fa-css3-alt"></i>
-                <h3>CSS</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 85%"></div></div>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-js-square"></i>
-                <h3>JavaScript</h3>
-                <p>Basics, learning ReactJS</p>
-                <div class="skill-level"><div class="skill-bar" style="width: 60%"></div></div>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>MySQL</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 70%"></div></div>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-file-excel"></i>
-                <h3>Microsoft Excel</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 80%"></div></div>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-brain"></i>
-                <h3>AI & Blockchain</h3>
-                <p>Exploring</p>
-                <div class="skill-level"><div class="skill-bar" style="width: 50%"></div></div>
+    
+            <!-- Tools -->
+            <div class="stack-group">
+                <h3>Tech & Tools ()</h3>
+                <div class="stack-grid">
+                    <div class="stack-card"><i class="fab fa-github"></i><span>GitHub</span></div>
+                    <div class="stack-card"><i class="devicon-vscode-plain"></i><span>VS Code</span></div>
+                    <div class="stack-card"><i class="devicon-figma-plain"></i><span>Figma</span></div>
+                    <div class="stack-card"><i class="fas fa-file-excel"></i><span>Excel</span></div>
+                </div>
             </div>
         </div>
+    </section>    
+
+    <section id="resume" class="resume section">
+        <h2 class="section-title">My Resume</h2>
+        <p class="resume-subtitle">
+            View my professional qualifications, skills, and experience.
+        </p>
+    
+        <div class="resume-container">
+            <iframe 
+                src="garvit_resume.pdf" 
+                title="Resume Preview"
+                class="resume-frame">
+            </iframe>
+        </div>
+    
+        <div class="resume-actions">
+            <a href="garvit_resume.pdf" target="_blank" download class="btn btn-primary">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </div>
     </section>
+    
 
     <section id="achievements" class="section">
         <h2 class="section-title">Achievements</h2>
         <div class="achievements-grid">
             <div class="achievement-card">
                 <i class="fas fa-trophy"></i>
-                <h3>Top 15 Finalist</h3>
-                <p>HackIndia 2025</p>
+                <h3>Top 4 Runner-Up</h3>
+                <p>Vertex 2025</p>
             </div>
             <div class="achievement-card">
                 <i class="fas fa-bullhorn"></i>
-                <h3>Campus Ambassador</h3>
-                <p>LetsUpgrade</p>
-            </div>
-            <div class="achievement-card">
-                <i class="fas fa-users"></i>
-                <h3>Event Management Team</h3>
-                <p>DevSphere India</p>
+                <h3>Technical Joint Secretary</h3>
+                <p>E-Cell</p>
             </div>
         </div>
     </section>
@@ -139,12 +190,16 @@
             <div class="project-card">
                 <div class="project-image"><i class="fas fa-chart-bar"></i></div>
                 <div class="project-details">
-                    <h3>Student Result Analyzer</h3>
-                    <p class="project-tech">Python + MySQL</p>
+                    <h3>Automation of Street Light</h3>
+                    <p class="project-tech">HTML/CSS + JS</p>
                     <div class="project-description">
-                        <p>A system to analyze and visualize student performance data with MySQL database integration.</p>
+                        <p>Designed and developed an IoT-based street light automation system with a real-time
+                            monitoring dashboard to control and track street lights remotely. The system helps
+                            reduce energy consumption, detects faults and potential energy theft, and enables faster
+                            maintenance through live status updates.
+                        </p>
                     </div>
-                    <div class="project-tags"><span>Python</span><span>MySQL</span><span>Data Analysis</span></div>
+                    <div class="project-tags"><span>ESP32</span><span>IOT</span><span>Automation</span><span>Energy Saving</span></div>
                 </div>
             </div>
             <div class="project-card">
@@ -161,37 +216,54 @@
         </div>
     </section>
 
-    <section id="leadership" class="section">
-        <h2 class="section-title">Leadership & Volunteering</h2>
-        <div class="leadership-grid">
-            <div class="leadership-card">
-                <i class="fas fa-flag"></i>
-                <div class="leadership-content">
-                    <h3>Campus Ambassador</h3>
-                    <p>LetsUpgrade</p>
-                    <small>Represented the organization on campus, organized workshops, and fostered a tech community.</small>
+    <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+    
+        <div class="experience-grid">
+    
+            <!-- Internship -->
+            <div class="experience-card">
+                <i class="fas fa-briefcase"></i>
+                <div class="experience-content">
+                    <h3>Summer Intern</h3>
+                    <p class="experience-org">Trading Engineers</p>
+                    <span class="experience-duration">Summer June-July(2025)</span>
+                    <small>
+                        Worked as a UI/UX Designer using Figma to design a scroll-free real-time
+                        monitoring dashboard for efficient real-time data monitoring and better user experience.
+                    </small>
                 </div>
             </div>
-            <div class="leadership-card">
-                <i class="fas fa-cogs"></i>
-                <div class="leadership-content">
-                    <h3>Event Logistics & Coordination</h3>
-                    <p>DevSphere India</p>
-                    <small>Managed on-ground logistics and coordinated with various teams to ensure the smooth execution of tech events.</small>
+    
+            <!-- Work / Position -->
+            <div class="experience-card">
+                <i class="fas fa-user-cog"></i>
+                <div class="experience-content">
+                    <h3>Technical Joint Secretary</h3>
+                    <p class="experience-org">E-Cell</p>
+                    <span class="experience-duration">2025 – Present</span>
+                    <small>
+                        Managed technical activities, supported event execution, and coordinated 
+                        with teams to promote innovation and entrepreneurship.
+                    </small>
                 </div>
             </div>
+    
         </div>
     </section>
+    
 
     <section id="interests" class="section">
         <h2 class="section-title">Interests</h2>
         <div class="interests-container">
+            <span class="interest-tag">Ideathon</span>
             <span class="interest-tag">Hackathons</span>
+            <span class="interest-tag">IoT & Smart City Solutions</span>
+            <span class="interest-tag">Automation & Energy Optimization</span>
             <span class="interest-tag">Problem-Solving</span>
-            <span class="interest-tag">Web Development</span>
-            <span class="interest-tag">Blockchain</span>
+            <span class="interest-tag">Data Visualization Dashboards</span>
+            <span class="interest-tag">UI/UX Design for Real-Time Systems</span>
             <span class="interest-tag">Artificial Intelligence</span>
-            <span class="interest-tag">Data-Driven Apps</span>
         </div>
     </section>
 
@@ -199,39 +271,71 @@
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:ujjwalshukla291@gmail.com">ujjwalshukla291@gmail.com</a></div>
-                <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+918882194557">+91 8882194557</a></div>
-                <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/ujjwal-shukla88821/" target="_blank">linkedin.com/in/ujjwal-shukla</a></div>
-                <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/techieujjwal" target="_blank">github.com/techieujjwal</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:garvitpatwaa@gmail.com">garvitpatwaa@gmail.com</a></div>
+                <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+918127667631">+91 8127667631</a></div>
+                <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/garvit-patwa-391375327/" target="_blank">linkedin.com/in/garvitpatwa</a></div>
+                <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/Garvitpatwa" target="_blank">github.com/Garvitpatwa</a></div>
             </div>
-            <form class="contact-form" id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
+            <form 
+            class="contact-form"
+            action="https://formspree.io/f/xbdlwvvw"
+            method="POST"
+          >
+              <!-- Optional subject -->
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+          
+              <!-- Optional success redirect -->
+              <!-- <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html"> -->
+          
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+          
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+          
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+          
+              <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+          
         </div>
-    </section>
+    </section>  
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Ujjwal Shukla. All rights reserved.</p>
+            <p>&copy; 2025 Garvit Patwa. All rights reserved.</p>
+    
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/ujjwal-shukla88821/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/techieujjwal" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:ujjwalshukla291@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/Garvitpatwa" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+    
+                <a href="https://www.linkedin.com/in/garvit-patwa-391375327/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+    
+                <a href="https://x.com/Garvitpatwa" target="_blank" aria-label="X">
+                    <i class="devicon-twitter-original"></i>
+                </a>
+    
+                <a href="https://www.instagram.com/garvitpatwa/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+    
+                <a href="mailto:garvitpatwaa@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
     </footer>
+    
 
     <script src="script.js"></script>
 </body>
