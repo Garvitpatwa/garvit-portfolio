@@ -4,7 +4,7 @@ Welcome to my personal portfolio website repository.
 This project showcases my skills, projects, experience, and achievements as a Computer Science Engineering student.
 
 ## 🌐 Live Website
-👉 https://garvitpatwa.github.io/garvit-portfolio/
+👉 https://garvitpatwa-portfolio.vercel.app/
 
 ---
 
@@ -26,7 +26,7 @@ This project showcases my skills, projects, experience, and achievements as a Co
 
 - **HTML5** – Structure & Content  
 - **CSS3** – Styling, Animations, Responsive Layout  
-- **JavaScript (ES6)** – Interactivity & Theme Logic  
+- **JavaScript** – Interactivity & Theme Logic  
 - **Font Awesome & Devicons** – Icons  
 - **Formspree** – Contact Form Backend  
 
